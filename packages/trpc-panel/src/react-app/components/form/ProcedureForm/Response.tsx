@@ -24,7 +24,14 @@ export function Response({
   if (typeof children === "object") {
     return (
       <FormSection title={title}>
-        <JsonViewer rootName={false} value={children} quotesOnKeys={false} />
+        <JsonViewer
+          rootName={false}
+          value={children}
+          quotesOnKeys={false}
+          maxDisplayLength={100}
+          groupArraysAfterLength={500}
+          indentWidth={2}
+        />
       </FormSection>
     );
   }
