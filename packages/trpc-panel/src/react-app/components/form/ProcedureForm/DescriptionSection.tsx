@@ -16,7 +16,12 @@ export function DocumentationSection({
       <div className="space-y-4">
         {extraData.description && (
           <DocumentationSubsection title="Description">
-            {extraData.description}
+            {extraData.description.split("\n").map((line, index) => (
+              <React.Fragment key={index}>
+                {line}
+                <br />
+              </React.Fragment>
+            ))}
           </DocumentationSubsection>
         )}
         {hasParams && (
